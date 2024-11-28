@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gradpath.RoleSelectionPage">
+    <StackLayout Padding="50">
+        <Label Text="Select Your Role" FontSize="Large" HorizontalOptions="Center"  />
+        <Button Text="Counselor" Clicked="OnRoleSelected" CommandParameter="Counselor" Margin="0,0,0,12" />
+        <Button Text="Student" Clicked="OnRoleSelected" CommandParameter="Student" Margin="0,0,0,12"/>
+    </StackLayout>
+</ContentPage>

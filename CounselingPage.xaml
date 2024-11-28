@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gradpath.CounselingPage"
+             Title="Counseling and Career Guidance">
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Label Text="Career Counseling" FontSize="20" FontAttributes="Bold" />
+            <Label Text="Describe your current career situation and goals:" />
+            <Editor x:Name="txtDescription" HeightRequest="100" />
+            <Button Text="Submit Request" Clicked="OnSubmitClicked" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

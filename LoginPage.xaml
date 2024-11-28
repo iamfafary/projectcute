@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gradpath.LoginPage"
+             Title="Login">
+
+    <StackLayout Padding="20" VerticalOptions="CenterAndExpand">
+        <Label Text="Welcome Back" FontSize="36" HorizontalOptions="Center" />
+        <Label Text="Login to your account" FontSize="18" HorizontalOptions="Center" TextColor="Gray" />
+        <Entry x:Name="txtEmail" Placeholder="Email" Keyboard="Email" Margin="0,20,0,0" />
+        <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="True" Margin="0,10,0,0" />
+        <Button Text="Login" Clicked="OnLoginClicked" BackgroundColor="#6200EE" TextColor="White" Margin="0,20,0,0" />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0">
+            <Button Text="Google" BackgroundColor="#DB4437" TextColor="White" CornerRadius="20" Padding="10,0" WidthRequest="120" />
+            <Button Text="Facebook" BackgroundColor="#3B5998" TextColor="White" CornerRadius="20" Padding="10,0" WidthRequest="120" Margin="10,0,0,0" />
+        </StackLayout>
+        <Label Text="Don't have an account?" FontSize="14" HorizontalOptions="Center" Margin="20,10,20,0" />
+        <Button Text="Sign Up" Clicked="OnSignUpButtonClicked" TextColor="#6200EE" BackgroundColor="Transparent" />
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,17 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gradpath.StudentAddDetailsPage">
+    <StackLayout Padding="20">
+        <Label Text="Student Details" FontSize="Large" HorizontalOptions="Center" />
+        <Entry x:Name="fullNameEntry" Placeholder="Full Name" />
+        <Entry x:Name="careerInterestsEntry" Placeholder="Career Interests" />
+
+        <Label Text="Skills" FontSize="Medium"/>
+        <Picker x:Name="skillsPicker" Title="Select Skills" ItemsSource="{Binding AvailableSkills}" SelectedIndexChanged="OnSkillsPickerChanged" Margin="0,0,0,10" />
+
+        <Entry x:Name="goalsEntry" Placeholder="Goals" />
+        <Image x:Name="profilePicture" HeightRequest="100" WidthRequest="100" />
+        <Button Text="Upload Profile Picture" Clicked="OnUploadProfilePictureClicked" Margin="0,15,0,15" />
+        <Button Text="Save Details" Clicked="OnSaveClicked" />
+    </StackLayout>
+</ContentPage>

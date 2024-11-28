@@ -1,0 +1,13 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gradpath.CounselorAddDetailsPage">
+    <StackLayout Padding="20">
+        <Label Text="Counselor Details" FontSize="Large" HorizontalOptions="Center" />
+        <Entry x:Name="fullNameEntry" Placeholder="Full Name" />
+        <Entry x:Name="schoolNameEntry" Placeholder="School Name" />
+        <Entry x:Name="yearsOfExperienceEntry" Placeholder="Years of Experience" />
+        <Image x:Name="profilePicture" HeightRequest="100" WidthRequest="100" />
+        <Button Text="Upload Profile Picture" Clicked="OnUploadProfilePictureClicked" Margin="0,15,0,15" />
+        <Button Text="Save Details" Clicked="OnSaveClicked" />
+    </StackLayout>
+</ContentPage>

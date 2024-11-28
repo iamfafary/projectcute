@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gradpath.StudentDetailPage"
+             BackgroundColor="FloralWhite">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="back_arrow.png" Priority="0" Order="Primary" Clicked="OnBackButtonClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Image x:Name="studentProfilePicture" Source="{Binding ProfilePictureUrl}" HeightRequest="100" WidthRequest="100" Aspect="AspectFill" />
+            <Label Text="{Binding FullName}" FontSize="20" FontAttributes="Bold" />
+            <Label Text="{Binding CareerInterests}" FontSize="16" />
+            <Label Text="{Binding Goals}" FontSize="16" />
+            <Label Text="{Binding Skills}" FontSize="16" />
+            <Label Text="Job Matches:" FontSize="15" FontAttributes="Bold" Margin="0,20,0,0" />
+            <CollectionView ItemsSource="{Binding JobMatches}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout >
+                            <Label Text="{Binding Title}" FontSize="12" FontAttributes="Bold" />
+                            <Label Text="{Binding Description}" FontSize="14" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Feedback Section -->
+            <Label Text="Career and Guidance Tips:" FontSize="20" FontAttributes="Bold" Margin="0,20,0,0" />
+            <CollectionView x:Name="lstFeedback" ItemsSource="{Binding Feedback}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Comment}" FontAttributes="Italic" />
+                            <Label Text="{Binding Counselor.FullName}" FontAttributes="Bold" FontSize="12" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Add New Comment Section -->
+            <Editor Placeholder="Add your comment..." Text="{Binding NewComment}" HeightRequest="100" />
+            <Button Text="Submit Comment" Command="{Binding SubmitCommentCommand}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

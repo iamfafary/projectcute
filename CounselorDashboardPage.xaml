@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gradpath.CounselorDashboardPage"
+             Title="Counselor Dashboard">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid Padding="20" RowSpacing="20" ColumnSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Counselor Profile Section -->
+            <Frame Grid.Row="0" Grid.ColumnSpan="2" Padding="15" CornerRadius="15" BackgroundColor="#434567" Margin="0,0,0,0">
+                <StackLayout Orientation="Horizontal" Spacing="15">
+                    <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0">
+                        <Image Source="{Binding ProfilePictureUrl}" Aspect="AspectFill" />
+                    </Frame>
+                    <StackLayout VerticalOptions="Center">
+                        <Label Text="{Binding CounselorFullName}" FontSize="24" FontAttributes="Bold" TextColor="White"/>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout>
+                                <Label Text="School:" FontSize="14" TextColor="White"/>
+                                <Label Text="Experience:" FontSize="14" TextColor="White"/>
+                            </StackLayout>
+                            <StackLayout>
+                                <Label Text="{Binding CounselorSchool}" FontSize="14" TextColor="White" Margin="10,0,0,0"/>
+                                <Label Text="{Binding CounselorYearsOfExperience}" FontSize="14" TextColor="White" Margin="10,0,0,0"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <!-- Student List Section -->
+            <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Padding="15" CornerRadius="15" BackgroundColor="DarkCyan" Margin="0,0,0,20">
+                <StackLayout>
+                    <Label Text="Student List" FontSize="18" FontAttributes="Bold" TextColor="White"/>
+                    <CollectionView ItemsSource="{Binding Students}" Margin="0,10,0,0">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="10" CornerRadius="10" BorderColor="Gray" BackgroundColor="White">
+                                    <StackLayout Orientation="Horizontal" Spacing="10">
+                                        <Frame HeightRequest="50" WidthRequest="50" CornerRadius="25" Padding="0">
+                                            <Image Source="{Binding ProfilePictureUrl}" Aspect="AspectFill" />
+                                        </Frame>
+                                        <StackLayout VerticalOptions="Center">
+                                            <Label Text="{Binding FullName}" FontAttributes="Bold" FontSize="16"/>
+                                            <Label Text="{Binding skills}" FontSize="14" TextColor="Gray"/>
+                                        </StackLayout>
+                                        <!-- Add Gesture Recognizer -->
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnStudentTapped" CommandParameter="{Binding .}" />
+                                        </StackLayout.GestureRecognizers>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ScrollView>
+</ContentPage>

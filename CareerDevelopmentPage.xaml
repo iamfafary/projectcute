@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gradpath.CareerDevelopmentPage"
+             Title="Career Development">
+    <ScrollView>
+        <StackLayout Padding="20">
+            <!-- Career Development Tips -->
+            <Frame Padding="10" CornerRadius="10" BorderColor="Gray" BackgroundColor="LightGray">
+                <StackLayout>
+                    <Label Text="Career Development Tips" FontSize="18" FontAttributes="Bold" />
+                    <ListView x:Name="lstDevelopmentTips" ItemsSource="{Binding CareerDevelopmentTips}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <Label Text="{Binding Title}" FontAttributes="Bold" />
+                                        <Label Text="{Binding Description}" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+
+            <!-- Recommended Courses -->
+            <Frame Padding="10" Margin="0,20,0,10" CornerRadius="10" BorderColor="Gray" BackgroundColor="LightGray">
+                <StackLayout>
+                    <Label Text="Recommended Courses" FontSize="18" FontAttributes="Bold" />
+                    <ListView x:Name="lstCourses" ItemsSource="{Binding RecommendedCourses}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <Label Text="{Binding Title}" FontAttributes="Bold" />
+                                        <Label Text="{Binding Description}" />
+                                        <Label Text="{Binding Link}" TextColor="Blue" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+
+            <!-- Personalized Skill Development Plan -->
+            <Frame Padding="10" Margin="0,20,0,10" CornerRadius="10" BorderColor="Gray" BackgroundColor="LightGray">
+                <StackLayout>
+                    <Label Text="Personalized Skill Development Plan" FontSize="18" FontAttributes="Bold" />
+                    <!-- Add content for the personalized skill development plan here -->
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

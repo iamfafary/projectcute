@@ -1,0 +1,14 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gradpath.CounselorFeedbackPage"
+             Title="Provide Feedback">
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Label Text="Submit Feedback for a Student" FontSize="20" FontAttributes="Bold" />
+            <Entry x:Name="txtStudentId" Placeholder="Student ID" />
+            <Entry x:Name="txtTitle" Placeholder="Title" />
+            <Editor x:Name="txtComments" Placeholder="Enter your feedback here..." HeightRequest="100" />
+            <Button Text="Submit Feedback" Clicked="OnSubmitFeedbackClicked" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,16 @@
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Gradpath"
+       x:Class="Gradpath.AppShell">
+
+    <!-- Define Routes -->
+    <ShellContent Route="SplashPage" ContentTemplate="{DataTemplate local:SplashPage}" />
+    <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+    <ShellContent Route="CounselorDashboardPage" ContentTemplate="{DataTemplate local:CounselorDashboardPage}"/>
+    <ShellContent Route="DashboardPage" ContentTemplate="{DataTemplate local:DashboardPage}" />
+    <ShellContent Route="RoleSelectionPage" ContentTemplate="{DataTemplate local:RoleSelectionPage}"/>
+    <ShellContent Route="CounselorAddDetailsPage" ContentTemplate="{DataTemplate local:CounselorAddDetailsPage}" />
+    <ShellContent Route="StudentAddDetailsPage" ContentTemplate="{DataTemplate local:StudentAddDetailsPage}" />
+    <ShellContent Route="StudentDetailPage" ContentTemplate="{DataTemplate local:StudentDetailPage}" />
+
+</Shell>
